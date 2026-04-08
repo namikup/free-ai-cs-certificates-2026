@@ -115,7 +115,7 @@ Your browser will open automatically at **http://127.0.0.1:5500**
 
 | # | Certificate | Issuer | Duration | Level | Cert Type |
 |---|---|---|---|---|---|
-| 1 | Generative AI Explained | NVIDIA | ~2 hrs | Beginner | Free Cert of Competency |
+| 1 | Elements of AI | University of Helsinki | ~30 hrs | Beginner | Free Certificate |
 | 2 | Databricks Gen AI Fundamentals | Databricks | ~2 hrs | Beginner | Free Certificate |
 | 3 | OpenAI Academy | OpenAI | ~4 hrs | Beginner | Free Certificate |
 | 4 | IBM AI Fundamentals | IBM SkillsBuild | ~6 hrs | Beginner | Free Credly Badge |
