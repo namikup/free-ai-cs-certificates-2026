@@ -189,3 +189,58 @@ MIT — free to use, fork, and share.
 ---
 
 *Verified as of April 2026. Certificate availability may change — always confirm directly with the issuer.*
+
+---
+
+## 📋 Audit & Changelog
+
+This list is actively maintained. Every entry is browser-verified against its official course page before being added.
+
+### How LinkedIn-sharing works per platform
+| Platform | Method |
+|---|---|
+| Kaggle | Direct "Share on LinkedIn" button on your certificate page |
+| IBM SkillsBuild | Credly badge → "Add to LinkedIn Profile" button |
+| Microsoft Learn | "Add to LinkedIn" button on Applied Skills credential page |
+| Harvard CS50 | Certificate URL shareable; add manually to LinkedIn Licenses & Certs |
+| Google Cloud | Skill badge page has "Share" → LinkedIn option |
+| DeepLearning.AI | Certificate page has LinkedIn share link |
+| Hugging Face | Certificate issued; add manually (known LinkedIn auto-upload bug — add URL manually) |
+| Databricks | Credly badge → "Add to LinkedIn Profile" button |
+| Linux Foundation | Credly badge via OpenSSF → "Add to LinkedIn Profile" |
+| Salesforce Trailhead | Earn badge on Trailhead, then add manually via LinkedIn → Add section → Licenses & Certifications |
+| Cognitive Class | Certificate issued; add manually via LinkedIn → Licenses & Certifications |
+| Elements of AI | Certificate issued by Univ. of Helsinki; add manually to LinkedIn |
+
+---
+
+### Change history
+
+#### v1.3 — 9 April 2026 — Browser-verified cert pass
+- ✅ **Kaggle — Intro to Machine Learning**: confirmed `"Hours to earn certificate: 3"`, `"No cost, like all Kaggle Learn Courses"`, direct LinkedIn share button on cert page
+- ✅ **Kaggle — Intro to AI Ethics**: confirmed `"Hours to earn certificate: 4"`, same free policy, LinkedIn share confirmed
+- ✅ **Salesforce Trailhead — Einstein AI**: confirmed 2 free badges awarded (Responsible Creation of AI + Einstein Bots Basics); corrected duration from `~2 hrs` → `~1.25 hrs`; LinkedIn sharing requires manual add from Trailhead profile
+- ✅ **Cognitive Class — Deep Learning Fundamentals**: confirmed `"Certificate Offered"` on course page, `"Enroll for free"` with no paywall; LinkedIn sharing via manual add
+
+#### v1.2 — 9 April 2026 — Coursera paywall sweep
+- ❌ Removed **Google AI Essentials** (cert costs $49 on Coursera)
+- ❌ Removed **Google Prompting Essentials** (cert costs $49 on Coursera)
+- ❌ Removed **IBM Gen AI: Prompt Engineering** (Coursera paywall, financial aid only)
+- ❌ Removed **DeepLearning.AI AI For Everyone** (costs $49 for certificate)
+- ➕ Added **Kaggle — Intro to Machine Learning** (100% free, LinkedIn direct share)
+- ➕ Added **Kaggle — Intro to AI Ethics** (100% free, LinkedIn direct share)
+- ➕ Added **Salesforce Trailhead — Einstein AI** (free Trailhead badge)
+- ➕ Added **Cognitive Class — Deep Learning Fundamentals** (free cert, IBM Skills Network)
+
+#### v1.1 — 9 April 2026 — Full audit pass
+- ❌ Removed **NVIDIA Generative AI Explained** — NVIDIA DLI team confirmed on forums: [this course issues no certificate](https://forums.developer.nvidia.com/t/need-certificate-or-proof-for-completed-generative-ai-explained-course/329255)
+- ❌ Removed **OpenAI Academy** — certifications confirmed as not yet live (in pilot phase as of April 2026)
+- ➕ Added **Elements of AI** (University of Helsinki) — free cert confirmed
+- ➕ Added **DeepLearning.AI ChatGPT Prompt Engineering for Developers** — free on DL.AI platform (short course)
+- 🔧 Fixed **Linux Foundation**: wrong course code `LFS118` → `LFEL1012`; corrected duration `~10 hrs` → `~1 hr`
+- 🔧 Fixed **Google Prompting Essentials** URL (was pointing to wrong page)
+
+#### v1.0 — 7 April 2026 — Initial release
+- 15 AI & CS certificates curated and published
+- Dashboard built with sort, filter, search, dark/light mode
+- Deployed at perplexity.ai/computer/a/free-ai-cs-certificates-2026-1kYLdDf5S0irZcufoSF4jg
