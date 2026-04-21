@@ -2,7 +2,7 @@
 
 A curated, sortable comparison dashboard of the **15 best free AI and Computer Science certificates** you can earn in 2026 — with durations, issuers, levels, topics, and direct LinkedIn badge links.
 
-🔗 **Live demo:** https://www.perplexity.ai/computer/a/free-ai-cs-certificates-2026-1kYLdDf5S0irZcufoSF4jg
+🔗 **Live demo:** https://free-ai-cs-certificates-2026-18rmk2f8z-lim-jia-xians-projects.vercel.app
 
 ---
 
@@ -243,4 +243,4 @@ This list is actively maintained. Every entry is browser-verified against its of
 #### v1.0 — 7 April 2026 — Initial release
 - 15 AI & CS certificates curated and published
 - Dashboard built with sort, filter, search, dark/light mode
-- Deployed at perplexity.ai/computer/a/free-ai-cs-certificates-2026-1kYLdDf5S0irZcufoSF4jg
+- Deployed at https://free-ai-cs-certificates-2026-18rmk2f8z-lim-jia-xians-projects.vercel.app
