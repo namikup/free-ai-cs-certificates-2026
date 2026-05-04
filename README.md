@@ -1,6 +1,6 @@
 # 🎓 Free AI & CS Certificates 2026
 
-A curated, sortable comparison dashboard of the **15 best free AI and Computer Science certificates** you can earn in 2026 — with durations, issuers, levels, topics, and direct LinkedIn badge links.
+A curated, sortable comparison dashboard of the **24 best free AI and Computer Science certificates** you can earn in 2026 — with durations, issuers, levels, topics, and direct LinkedIn badge links.
 
 🔗 **Live demo:** https://namikup.github.io/free-ai-cs-certificates-2026/
 
@@ -111,37 +111,24 @@ Your browser will open automatically at **http://127.0.0.1:5500**
 
 ---
 
-## 📋 The 15 Certificates
+## 📋 The Certificates
 
-| # | Certificate | Issuer | Duration | Level | Cert Type |
-|---|---|---|---|---|---|
-| 1 | Elements of AI | University of Helsinki | ~30 hrs | Beginner | Free Certificate |
-| 2 | Databricks Gen AI Fundamentals | Databricks | ~2 hrs | Beginner | Free Certificate |
-| 3 | OpenAI Academy | OpenAI | ~4 hrs | Beginner | Free Certificate |
-| 4 | IBM AI Fundamentals | IBM SkillsBuild | ~6 hrs | Beginner | Free Credly Badge |
-| 5 | Google AI Essentials | Google | 6–10 hrs | Beginner | Free Certificate |
-| 6 | Google Prompting Essentials | Google | ~6 hrs | Beginner | Free Certificate |
-| 7 | AI For Everyone | DeepLearning.AI | ~7 hrs | Beginner | Free Certificate |
-| 8 | Google Cloud Gen AI Fundamentals | Google Cloud | ~8 hrs | Beginner | Free Skill Badge |
-| 9 | IBM Gen AI: Prompt Engineering | IBM | ~9 hrs | Beginner | Free Certificate |
-| 10 | Secure AI/ML-Driven Software Dev | Linux Foundation | ~10 hrs | Intermediate | Free Verifiable Badge |
-| 11 | Microsoft AI Skills | Microsoft | 10–15 hrs | Beginner | Free Digital Badges |
-| 12 | AWS ML & AI Fundamentals | Amazon AWS | 1–4 weeks | Beginner | Audit Free* |
-| 13 | Hugging Face LLM Course | Hugging Face | ~30 hrs | Intermediate | Free Certificate |
-| 14 | Harvard CS50's AI with Python | Harvard University | 7 weeks | Intermediate | Free CS50 Certificate |
-| 15 | Harvard CS50x: Intro to CS | Harvard University | ~10 weeks | Beginner | Free CS50 Certificate |
+There are currently **24** certificates tracked in this project. 
+To view the full sortable list, including topics, descriptions, and direct enrollment links, please visit the [Live Dashboard](https://namikup.github.io/free-ai-cs-certificates-2026/).
 
-> \* "Audit free" — course content is free, formal certificate may require payment or financial aid.
+Alternatively, you can view the raw data schema directly in [`data/certificates.json`](data/certificates.json).
+
+> \* "Audit free" items mean the course content is free, but a formal certificate may require payment or financial aid.
 
 ---
 
 ## ➕ Add a certificate (Contributing)
 
 1. Fork this repo
-2. Open `index.html` and find the `CERTS` array inside the `<script>` tag
-3. Add a new entry following this format:
+2. Open `data/certificates.json`
+3. Add a new JSON object to the array following this format:
 
-```js
+```json
 {
   id: 16,
   name: "Certificate Name",
@@ -165,9 +152,11 @@ Your browser will open automatically at **http://127.0.0.1:5500**
 
 ## 🗂 Project structure
 
-```
+```text
 free-ai-cs-certificates-2026/
-└── index.html    ← everything lives here (HTML + CSS + JS, no build step)
+├── index.html               ← Layout and styling (HTML/CSS)
+├── js/app.js                ← Dynamic logic (Sort, filter, render)
+├── data/certificates.json   ← Database of all certificates
 └── README.md
 ```
 
@@ -178,6 +167,7 @@ free-ai-cs-certificates-2026/
 - **HTML5** — semantic markup
 - **CSS3** — custom design tokens, fluid type scale, dark/light mode
 - **Vanilla JS** — sort, filter, search, theme toggle (no frameworks)
+- **JSON** — decoupled data layer for easy maintenance
 - **Fonts** — [Cabinet Grotesk](https://www.fontshare.com/fonts/cabinet-grotesk) + [Satoshi](https://www.fontshare.com/fonts/satoshi) via Fontshare CDN
 
 ---
@@ -188,13 +178,31 @@ MIT — free to use, fork, and share.
 
 ---
 
-*Verified as of April 2026. Certificate availability may change — always confirm directly with the issuer.*
+*Verified as of May 2026. Certificate availability may change — always confirm directly with the issuer.*
 
 ---
 
 ## 📋 Audit & Changelog
 
 This list is actively maintained. Every entry is browser-verified against its official course page before being added.
+
+### Change history
+
+#### v2.0 — 4 May 2026 — Architecture Upgrade & May 2026 Update
+- 🚀 **Architecture Refactor**: Decoupled the UI from the data. The `index.html` now uses `fetch()` to load certificates from a dedicated `data/certificates.json` file.
+- ⚡️ **Dynamic Stats**: Hero statistics (Total, Beginner, Shortest) now calculate dynamically based on the JSON payload.
+- ➕ Added **9 New Certificates** mapped from the May 2026 research audit:
+  - **AI Foundations** (OpenAI Academy)
+  - **5-Day AI Agents Intensive** (Kaggle)
+  - **Create Agents in Copilot Studio** (Microsoft)
+  - **Streamline Workflows with AI Chat** (Microsoft)
+  - **Agentforce Service Superbadge** (Salesforce)
+  - **Cloud Quest: GenAI Practitioner** (AWS)
+  - **AI Fundamentals Learning Plan** (IBM SkillsBuild)
+  - **Generative AI Explained** (NVIDIA DLI)
+  - **Introduction to OpenUSD** (NVIDIA DLI)
+
+---
 
 ### How LinkedIn-sharing works per platform
 | Platform | Method |
