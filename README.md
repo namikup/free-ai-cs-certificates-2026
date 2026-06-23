@@ -1,6 +1,6 @@
 # 🎓 Free AI & CS Certificates 2026
 
-A curated, sortable comparison dashboard of the **24 best free AI and Computer Science certificates** you can earn in 2026 — with durations, issuers, levels, topics, and direct LinkedIn badge links.
+A curated, sortable comparison dashboard of the **28 best free AI and Computer Science certificates** you can earn in 2026 — with durations, issuers, levels, topics, and direct LinkedIn badge links. Includes a **Systematic Learning Roadmap** based on a comprehensive 2026 no-cost credentials research report.
 
 🔗 **Live demo:** https://namikup.github.io/free-ai-cs-certificates-2026/
 
@@ -108,12 +108,13 @@ Your browser will open automatically at **http://127.0.0.1:5500**
 | **Enroll** | Click the teal **Enroll** button to go directly to the course page |
 | **LinkedIn** | Click the **in** button to open the course's LinkedIn share page |
 | **Dark / Light mode** | Click the moon/sun icon in the top-right corner |
+| **Systematic Roadmap** | Click the **🗺️ Systematic Roadmap** toggle above the table to switch to a 4-stage visual learning pathway |
 
 ---
 
 ## 📋 The Certificates
 
-There are currently **24** certificates tracked in this project. 
+There are currently **28** certificates tracked in this project. 
 To view the full sortable list, including topics, descriptions, and direct enrollment links, please visit the [Live Dashboard](https://namikup.github.io/free-ai-cs-certificates-2026/).
 
 Alternatively, you can view the raw data schema directly in [`data/certificates.json`](data/certificates.json).
@@ -130,21 +131,24 @@ Alternatively, you can view the raw data schema directly in [`data/certificates.
 
 ```json
 {
-  id: 16,
-  name: "Certificate Name",
-  issuer: "Issuer Name",
-  issuer_color: "#hexcolor",   // brand color of the issuer
-  duration: "~X hrs",
-  duration_hrs: X,             // number only, used for sorting
-  level: "Beginner",           // "Beginner" or "Intermediate"
-  topic: "AI Fundamentals",    // used for topic filter chip
-  cert_type: "free",           // "free" or "audit"
-  cert_label: "Free Certificate",
-  url: "https://course-link.com",
-  linkedin_url: "https://linkedin-or-course-link.com",
-  description: "One-line summary of what you learn"
+  "id": 29,
+  "name": "Certificate Name",
+  "issuer": "Issuer Name",
+  "issuer_color": "#hexcolor",
+  "duration": "~X hrs",
+  "duration_hrs": 5,
+  "level": "Beginner",
+  "topic": "AI Fundamentals",
+  "cert_type": "free",
+  "cert_label": "Free Certificate",
+  "url": "https://course-link.com",
+  "linkedin_url": "https://linkedin-or-course-link.com",
+  "description": "One-line summary of what you learn",
+  "stage": 3
 }
 ```
+
+> `stage` is **optional** — only set it (1–4) if this certificate belongs to the Systematic Roadmap pathway. Omit it for certificates that are standalone and not part of the four-stage sequence.
 
 4. Open a pull request — all contributions are welcome!
 
@@ -178,7 +182,22 @@ MIT — free to use, fork, and share.
 
 ---
 
-*Verified as of May 2026. Certificate availability may change — always confirm directly with the issuer.*
+*Verified as of June 2026. Certificate availability may change — always confirm directly with the issuer.*
+
+---
+
+## 🗺️ Systematic Learning Roadmap
+
+The dashboard now features an interactive **4-Stage Systematic Roadmap**, based on the comprehensive research report: *"No-Cost Artificial Intelligence and Computer Science Credentials" (2026)*.
+
+Click the **🗺️ Systematic Roadmap** button above the certificate table to switch from the sortable registry grid to the structured learning pathway.
+
+| Stage | Title | Focus |
+|---|---|---|
+| **Stage 1** | Foundational Systems & Logic | CS50x, CS50 AI, CS50 SQL — Harvard automated grading |
+| **Stage 2** | Cloud Infrastructure & Architecture | AWS Educate Cloud Badging, Pearson VUE voucher pathway |
+| **Stage 3** | Data Science & Core ML | IBM Cognitive Class pipelines, Jupyter sandboxes |
+| **Stage 4** | Generative AI Integration & Automation | Microsoft Applied Skills, OpenAI Academy, Kaggle Agents |
 
 ---
 
@@ -187,6 +206,27 @@ MIT — free to use, fork, and share.
 This list is actively maintained. Every entry is browser-verified against its official course page before being added.
 
 ### Change history
+
+#### v3.0 — 23 June 2026 — Deep Research Audit & Systematic Roadmap
+- 🔍 **Technical Audit**: Completed a rigorous, field-by-field comparison of the dashboard against the comprehensive PDF research report *"No-Cost Artificial Intelligence and Computer Science Credentials"* (2026 edition).
+- 🗺️ **Systematic Roadmap**: Added an interactive **4-Stage Learning Pathway** toggle. Users can switch between the sortable **Registry Grid** and a visually structured **Systematic Roadmap** (responsive: horizontal columns on desktop, vertical timeline on mobile).
+- ✏️ **Data Corrections** applied from the audit:
+  - **Generative AI Fundamentals Skill Badge** (Google Cloud): corrected duration from `~8 hrs` → `2 hrs (120 mins)` and direct Credly badge link updated.
+  - **OpenAI Academy**: disambiguated from invite-only proctored pilot. Renamed to **OpenAI Academy Course-Completion Series**, corrected issuer to `OpenAI / Gradual`, and updated `cert_label` to `Free Certificate` (no Credly).
+  - **Microsoft Applied Skills** (id: `5`): corrected duration from `10–15 hrs` → `2–4 hrs per track` and updated description to include Pearson VUE voucher details.
+  - **Harvard CS50 AI** (id: `6`): corrected duration from `7 weeks / ~70 hrs` → `100–180 hrs` and added automated GitHub grading detail.
+  - **Harvard CS50x** (id: `7`): corrected duration from `~10 weeks` → `100–180 hrs` and added GitHub grading detail.
+  - **Microsoft Applied Skills** tracks (id: `18`, `19`): renamed to include full "Microsoft Applied Skills:" prefix for clarity.
+  - **Kaggle 5-Day AI Agents** (id: `17`): renamed to **Kaggle: 5-Day AI Agents Intensive** for clarity.
+- ➕ **4 New Certificates** added from the audit's gap analysis:
+  - **Harvard CS50's Introduction to Databases with SQL** — Beginner, CS Fundamentals, Stage 1
+  - **Google AI Educator Series & Certified Educator Levels 1 & 2** — Beginner, AI Fundamentals
+  - **AWS Educate Cloud Badging & Emerging Talent Pearson VUE Voucher Program** — Beginner, CS Fundamentals, Stage 2
+  - **Fundamentals of AI & Prompt Engineering for Everyone** (IBM Cognitive Class) — Beginner, AI Fundamentals, Stage 3
+- 🏷️ **Stage Metadata** added: 10 certificates annotated with `"stage": 1–4` to power the Systematic Roadmap view without duplication.
+- 📊 **Total count**: 24 → **28 certificates**
+
+---
 
 #### v2.0 — 4 May 2026 — Architecture Upgrade & May 2026 Update
 - 🚀 **Architecture Refactor**: Decoupled the UI from the data. The `index.html` now uses `fetch()` to load certificates from a dedicated `data/certificates.json` file.
