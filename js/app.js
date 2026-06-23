@@ -4,6 +4,30 @@ let sortDir = 'asc';
 let filterLevel = 'all';
 let filterTopic = 'all';
 let searchQuery = '';
+let currentView = 'grid';
+
+const ROADMAP_STAGES = [
+    {
+        stage: 1,
+        title: "Foundational Systems & Logic",
+        desc: "Build a strong foundation in computational logic, systems programming, memory management, and database structures."
+    },
+    {
+        stage: 2,
+        title: "Cloud Infrastructure & Architecture",
+        desc: "Transition to cloud architecture, network security, identity management, and operational cloud environments."
+    },
+    {
+        stage: 3,
+        title: "Data Science & Core Machine Learning",
+        desc: "Develop machine learning pipelines and design deep learning neural networks within Jupyter Notebook sandboxes."
+    },
+    {
+        stage: 4,
+        title: "Generative AI Integration & Automation",
+        desc: "Master prompt optimization, automated agent workflows, and custom enterprise agentic development."
+    }
+];
 
 function initializeStats() {
     if (!CERTS || CERTS.length === 0) return;
@@ -167,6 +191,84 @@ function setupListeners() {
     });
 
     setIcon(theme);
+
+    // View Toggle Listeners
+    const btnViewGrid = document.getElementById('btn-view-grid');
+    const btnViewRoadmap = document.getElementById('btn-view-roadmap');
+    const gridWrap = document.querySelector('.table-wrap');
+    const roadmapWrap = document.getElementById('roadmap-view');
+    const controlsBar = document.querySelector('.controls-bar');
+    const resultMeta = document.querySelector('.result-meta');
+
+    if (btnViewGrid && btnViewRoadmap) {
+        btnViewGrid.addEventListener('click', () => {
+            currentView = 'grid';
+            btnViewGrid.classList.add('active');
+            btnViewRoadmap.classList.remove('active');
+            if (gridWrap) gridWrap.style.display = 'block';
+            if (controlsBar) controlsBar.style.display = 'flex';
+            if (resultMeta) resultMeta.style.display = 'flex';
+            if (roadmapWrap) roadmapWrap.style.display = 'none';
+        });
+
+        btnViewRoadmap.addEventListener('click', () => {
+            currentView = 'roadmap';
+            btnViewRoadmap.classList.add('active');
+            btnViewGrid.classList.remove('active');
+            if (gridWrap) gridWrap.style.display = 'none';
+            if (controlsBar) controlsBar.style.display = 'none';
+            if (resultMeta) resultMeta.style.display = 'none';
+            if (roadmapWrap) roadmapWrap.style.display = 'block';
+            renderRoadmap();
+        });
+    }
+}
+
+function renderRoadmap() {
+    const container = document.querySelector('.roadmap-container');
+    if (!container) return;
+
+    container.innerHTML = ROADMAP_STAGES.map(stageInfo => {
+        // Find certificates for this stage
+        const stageCerts = CERTS.filter(c => c.stage === stageInfo.stage);
+        
+        // Render certificates list
+        const certsHtml = stageCerts.map(cert => `
+            <div class="roadmap-cert-card">
+                <span class="roadmap-cert-name">${cert.name}</span>
+                <div class="roadmap-cert-meta">
+                    <span class="issuer-wrap">
+                        <span class="issuer-dot" style="background:${cert.issuer_color}"></span>
+                        <span class="issuer-name" style="font-size: var(--text-xs); color: var(--color-text-muted);">${cert.issuer}</span>
+                    </span>
+                    <span class="topic-tag" style="padding: 2px 6px; font-size: 10px;">${cert.topic}</span>
+                    <span class="badge badge-${cert.level.toLowerCase()}" style="padding: 1px 6px; font-size: 10px;">
+                        ${cert.level === 'Beginner' ? '🔰' : '⚡'} ${cert.level}
+                    </span>
+                </div>
+                <p class="roadmap-cert-desc" style="font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.4; margin-top: 4px;">${cert.description}</p>
+                <div class="roadmap-cert-actions" style="margin-top: 8px;">
+                    <a class="btn-enroll" href="${cert.url}" target="_blank" rel="noopener" style="padding: 4px 10px; font-size: 10px;" aria-label="Enroll in ${cert.name}">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        Enroll
+                    </a>
+                </div>
+            </div>
+        `).join('');
+
+        return `
+            <div class="roadmap-stage">
+                <div class="stage-header">
+                    <span class="stage-number">Stage ${stageInfo.stage}</span>
+                    <h3 class="stage-title" style="font-size: var(--text-lg); font-weight: 800; margin-block: 4px 8px;">${stageInfo.title}</h3>
+                    <p class="stage-desc" style="font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5;">${stageInfo.desc}</p>
+                </div>
+                <div class="stage-certs-list" style="display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-4);">
+                    ${certsHtml || '<p class="roadmap-cert-desc" style="font-size: var(--text-xs); color: var(--color-text-muted);">No certificates configured for this stage.</p>'}
+                </div>
+            </div>
+        `;
+    }).join('');
 }
 
 // ── Initial Render ────────────────────────────────────────
